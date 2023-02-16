@@ -38,7 +38,8 @@
   #+(and (not (or x86-64 freebsd)) x86) "i686"
   #+(and (not x86-64) x86 freebsd) "i386"
   #+arm "arm"
-  #+arm64 "aarch64")
+  #+arm64 "aarch64"
+  #+(and ppc64 little-endian) "ppc64le")
 
 (defun local-vendor ()
   #+(or linux windows) "-pc"
@@ -73,6 +74,7 @@
     "i386-unknown-openbsd"
     "x86_64-unknown-openbsd"
     "arm-pc-linux-gnu"
+    "ppc64le-pc-linux-gnu"
     "aarch64-pc-linux-gnu"
     "aarch64-apple-darwin9"
     "arm-unknown-linux-androideabi"

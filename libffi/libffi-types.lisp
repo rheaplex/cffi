@@ -71,7 +71,7 @@
 #-(or freebsd windows)
 (cenum abi
  ((:default-abi "FFI_DEFAULT_ABI"))
- #-x86-64
+ #-(or x86-64 ppc64)
  ((:sysv "FFI_SYSV"))
  #+x86-64
  ((:unix64 "FFI_UNIX64")))
